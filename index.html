@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PDF Viewer</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+    background: #f0f0f0;
+    text-align: center;
+  }
+  h1 {
+    color: #333;
+  }
+  #pdfViewer {
+    margin-top: 20px;
+    width: 80vw;
+    height: 80vh;
+    border: 2px solid #666;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+<body>
+
+<h1>View PDF File</h1>
+
+<embed 
+  id="pdfViewer" 
+  src="your-pdf-file.pdf" 
+  type="application/pdf" 
+  width="80%" 
+  height="80%" 
+/>
+
+</body>
+</html>
