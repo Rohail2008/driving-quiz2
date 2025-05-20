@@ -3,55 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PDF Viewer & Downloader</title>
+  <title>Responsive PDF Viewer</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 2rem;
+      margin: 0;
+      padding: 1rem;
       background: #f0f0f0;
       text-align: center;
     }
 
     h1 {
       color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    #pdfViewer {
-      margin-top: 20px;
-      width: 90vw;
+    .pdf-container {
+      width: 100%;
       height: 80vh;
-      border: 2px solid #666;
+      max-width: 100%;
+      margin: 0 auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border: 1px solid #666;
+    }
+
+    embed {
+      width: 100%;
+      height: 100%;
     }
 
     .download-btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
+      margin-top: 1rem;
+      padding: 12px 20px;
       background-color: #007BFF;
       color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease;
     }
 
     .download-btn:hover {
       background-color: #0056b3;
     }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 1.25rem;
+      }
+
+      .download-btn {
+        width: 90%;
+        font-size: 1rem;
+        padding: 12px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <h1>View and Download PDF</h1>
+  <h1>View & Download PDF</h1>
 
-  <embed 
-    id="pdfViewer" 
-    src="Driving.Test.pdf" 
-    type="application/pdf" 
-  />
-
-  <br />
+  <div class="pdf-container">
+    <embed 
+      src="Driving.Test.pdf" 
+      type="application/pdf" 
+    />
+  </div>
 
   <a href="Driving.Test.pdf" download class="download-btn">Download PDF</a>
 
