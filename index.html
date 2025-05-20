@@ -44,6 +44,7 @@
       border-radius: 6px;
       text-decoration: none;
       transition: background-color 0.3s ease;
+      cursor: pointer;
     }
 
     .download-btn:hover {
@@ -68,13 +69,22 @@
   <h1>View & Download PDF</h1>
 
   <div class="pdf-container">
-    <embed 
-      src="Driving.Test.pdf" 
-      type="application/pdf" 
-    />
+    <embed src="Driving.Test.pdf" type="application/pdf" />
   </div>
 
-  <a href="Driving.Test.pdf" download class="download-btn">Download PDF</a>
+  <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+
+  <script>
+    function downloadPDF() {
+      const link = document.createElement('a');
+      link.href = 'Driving.Test.pdf';
+      link.download = 'Driving.Test.pdf';
+      link.target = '_blank'; // fallback for mobile Safari
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
 
 </body>
 </html>
